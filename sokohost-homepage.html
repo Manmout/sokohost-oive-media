@@ -1,0 +1,1292 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>OIVE — L'intelligence économique au service des migrants · sokohost.com</title>
+<meta name="description" content="Observatoire de l'Impact des Vagues d'Immigration en Europe. Plateforme d'intelligence économique open data mesurant l'impact réel de l'immigration sur les corridors migratoires UE. Découverte du Paradoxe du Transfert.">
+<meta name="keywords" content="OIVE, Paradoxe du Transfert, The Spending Paradox, immigration économique Europe, corridors migratoires, remittances, intelligence économique migration, Njeng Pierre-Yves">
+<meta name="author" content="Njeng Pierre-Yves">
+<link rel="canonical" href="https://sokohost.com/fr/">
+<link rel="alternate" hreflang="fr" href="https://sokohost.com/fr/">
+<link rel="alternate" hreflang="en" href="https://sokohost.com/en/">
+<link rel="alternate" hreflang="x-default" href="https://sokohost.com/fr/">
+
+<!-- Open Graph -->
+<!-- meta-year: mise à jour manuelle au 1er janvier -->
+<meta property="og:site_name" content="SOKOHOST-OIVE' · sokohost.com">
+<meta property="og:type" content="website">
+<meta property="og:title" content="OIVE — L'intelligence économique au service des migrants">
+<meta property="og:description" content="Observatoire open data mesurant l'impact économique réel de l'immigration en Europe. Fondé sur 20 ans de collecte empirique. Découverte : le Paradoxe du Transfert.">
+<meta property="og:url" content="https://sokohost.com/fr/">
+<meta name="twitter:card" content="summary_large_image">
+
+<!-- Schema.org -->
+<!-- date historique fondatrice : foundingDate 2025 -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ResearchProject",
+  "name": "OIVE",
+  "alternateName": [
+    "Observatoire de l'Impact des Vagues d'Immigration en Europe",
+    "Observatory of Immigration Waves Economic Impact in Europe"
+  ],
+  "description": "Economic intelligence platform measuring the real economic impact of immigration across EU migration corridors. Originator of The Spending Paradox concept.",
+  "url": "https://sokohost.com",
+  "foundingDate": "2025",
+  "founder": {
+    "@type": "Person",
+    "name": "Njeng Pierre-Yves",
+    "jobTitle": "Founder & Economic Intelligence Analyst",
+    "sameAs": "https://sokohost.com/fr/fondateur"
+  },
+  "knowsAbout": [
+    "Immigration économique","Paradoxe du Transfert","The Spending Paradox",
+    "Corridors migratoires Europe","Remittances","Intelligence économique migration"
+  ],
+  "inLanguage": ["fr","en"],
+  "license": "https://creativecommons.org/licenses/by/4.0/"
+}
+</script>
+
+<!-- SKH-OIV-DS-001 Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+
+<style>
+/* ══ SKH-OIV-DS-001 TOKENS ══ */
+:root {
+  --ink:        #080806;
+  --bone:       #f4efe6;
+  --bone-warm:  #ede5d4;
+  --gold:       #f0b429;
+  --gold-dark:  #c8901a;
+  --red:        #cc2a18;
+  --blue:       #1b3f78;
+  --pink:       #e42d5a;
+  --chrome:     #adbec9;
+  --gold-10:    rgba(240,180,41,0.1);
+  --gold-20:    rgba(240,180,41,0.2);
+  --bone-dim:   rgba(244,239,230,0.45);
+  --red-10:     rgba(204,42,24,0.1);
+
+  --display:    'Bebas Neue', sans-serif;
+  --editorial:  'Playfair Display', Georgia, serif;
+  --mono:       'Space Mono', monospace;
+  --body:       'DM Sans', sans-serif;
+
+  --sp-xs:.25rem; --sp-sm:.5rem; --sp-md:1rem;
+  --sp-lg:2rem;   --sp-xl:4rem;  --sp-2xl:6rem;
+  --ease-out: cubic-bezier(0.16,1,0.3,1);
+  --dur-fast:.15s; --dur-med:.3s; --dur-slow:.8s;
+  --z-base:1; --z-float:10; --z-nav:100; --z-modal:200;
+}
+
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+
+body {
+  background: var(--ink);
+  color: var(--bone-dim);
+  font-family: var(--body);
+  font-size: 16px;
+  line-height: 1.75;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Grain — fonds sombres §4 règle 9 */
+body::after {
+  content:'';
+  position:fixed; inset:0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='280' height='280'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+  pointer-events:none; z-index:9999;
+}
+
+/* Accent bar gauche */
+body::before {
+  content:'';
+  position:fixed; left:0; top:0; bottom:0; width:3px;
+  background: linear-gradient(180deg,
+    var(--gold) 0%, var(--red) 45%, var(--blue) 100%);
+  opacity:.55; z-index:100;
+}
+
+/* ══ NAVIGATION ══ */
+nav {
+  position:fixed; top:0; left:0; right:0; z-index:500;
+  display:flex; align-items:center; justify-content:space-between;
+  padding:14px 48px;
+  background:rgba(8,8,6,0.88);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(240,180,41,0.12);
+}
+
+.nav-logo {
+  font-family: var(--editorial);
+  font-size: 1.4rem;
+  font-weight: 700;
+  font-style: italic;
+  color: var(--bone);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.nav-logo .logo-badge {
+  font-family: var(--mono);
+  font-size: 0.55rem;
+  font-weight: 400;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold);
+  border: 1px solid var(--gold-20);
+  padding: 2px 7px;
+  font-style: normal;
+}
+
+.nav-links {
+  display:flex; align-items:center; gap:32px; list-style:none;
+}
+
+.nav-links a {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--bone-dim);
+  text-decoration: none;
+  transition: color .15s;
+}
+
+.nav-links a:hover { color: var(--gold); }
+
+/* Lang toggle §5.7 */
+.lang-toggle { display:flex; align-items:center; gap:2px; margin-left:24px; }
+
+.lang-btn {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  padding: 4px 9px;
+  border: 1px solid rgba(244,239,230,0.1);
+  background: transparent;
+  color: rgba(244,239,230,0.3);
+  cursor: pointer;
+  transition: all .15s;
+}
+
+.lang-btn.active {
+  background: var(--gold);
+  color: var(--ink);
+  border-color: var(--gold);
+  font-weight: 700;
+}
+
+.lang-btn:hover:not(.active) {
+  border-color: var(--gold-20);
+  color: var(--gold);
+}
+
+/* ══ HERO ══ */
+.hero {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  padding: 140px 48px 80px;
+  gap: 64px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position:absolute; inset:0;
+  background:
+    radial-gradient(ellipse 60% 50% at 65% 50%, rgba(240,180,41,.05) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 60% at 20% 80%, rgba(204,42,24,.04) 0%, transparent 60%),
+    radial-gradient(ellipse 30% 40% at 80% 20%, rgba(27,63,120,.08) 0%, transparent 60%);
+  pointer-events:none;
+}
+
+.hero-grid {
+  position:absolute; inset:0;
+  background-image:
+    linear-gradient(rgba(240,180,41,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(240,180,41,0.04) 1px, transparent 1px);
+  background-size: 64px 64px;
+  pointer-events:none;
+}
+
+.hero-editorial { position:relative; z-index:2; }
+
+.hero-eyebrow {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  font-weight: 400;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.hero-eyebrow::before {
+  content:''; width:24px; height:1px;
+  background: var(--gold); opacity:.6;
+}
+
+/* Hero title — Bebas Neue §3 */
+.hero-title {
+  font-family: var(--display);
+  font-size: clamp(4rem, 9vw, 7.5rem);
+  line-height: 0.88;
+  letter-spacing: 0.02em;
+  color: var(--bone);
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.hero-title em {
+  font-family: var(--editorial);
+  font-style: italic;
+  color: var(--gold);
+  font-size: 0.6em;
+  line-height: 1.15;
+  display: block;
+  text-transform: none;
+  letter-spacing: -0.01em;
+}
+
+.hero-title .accent { color: var(--gold); font-style: normal; }
+
+.hero-mission {
+  font-family: var(--editorial);
+  font-style: italic;
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: rgba(244,239,230,0.5);
+  line-height: 1.6;
+  margin-bottom: 40px;
+  padding-left: 20px;
+  border-left: 2px solid var(--gold-dark);
+}
+
+.hero-mission strong { font-style: normal; color: var(--gold); }
+
+.hero-actions { display:flex; gap:12px; flex-wrap:wrap; }
+
+/* Boutons §6.1 */
+.btn-primary {
+  display:inline-flex; align-items:center; gap:8px;
+  padding:12px 22px;
+  background: var(--gold);
+  color: var(--ink);
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 1px solid var(--gold);
+  transition: all .15s;
+  cursor: pointer;
+}
+
+.btn-primary:hover { background: var(--bone); border-color: var(--bone); }
+
+.btn-secondary {
+  display:inline-flex; align-items:center; gap:8px;
+  padding:12px 22px;
+  background: transparent;
+  color: var(--bone-dim);
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  font-weight: 400;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 1px solid var(--gold-20);
+  transition: all .15s;
+  cursor: pointer;
+}
+
+.btn-secondary:hover { border-color: var(--gold-dark); color: var(--gold); }
+
+/* Hero data panel */
+.hero-data { position:relative; z-index:2; display:flex; flex-direction:column; gap:12px; }
+
+/* Live badge §5.5 */
+.live-badge {
+  display:inline-flex; align-items:center; gap:8px;
+  font-family: var(--mono);
+  font-size: 0.58rem;
+  font-weight: 400;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 8px;
+}
+
+.live-dot {
+  width:7px; height:7px; border-radius:50%;
+  background: var(--gold);
+  animation: pulse-live 1.4s ease-in-out infinite;
+}
+
+@keyframes pulse-live {
+  0%,100%{opacity:1;transform:scale(1);}
+  50%{opacity:.35;transform:scale(.65);}
+}
+
+/* KPI Cards §6.3 */
+.kpi-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+
+.kpi-card {
+  background: rgba(244,239,230,0.03);
+  border: 1px solid rgba(244,239,232,0.07);
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+  transition: border-color .2s, transform .3s var(--ease-out);
+}
+
+.kpi-card::after {
+  content:''; position:absolute; bottom:0; left:0; right:0;
+  height:2px; background: var(--accent-color, var(--gold));
+  transform:scaleX(0); transform-origin:left;
+  transition:transform .8s cubic-bezier(.4,0,.2,1);
+}
+
+.kpi-card.revealed::after { transform:scaleX(1); }
+
+.kpi-card:hover {
+  border-color: var(--gold-20);
+  transform: translateY(-2px);
+}
+
+.kpi-label {
+  font-family: var(--mono);
+  font-size: 0.55rem;
+  font-weight: 400;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: rgba(244,239,230,0.25);
+  margin-bottom: 8px;
+}
+
+.kpi-value {
+  font-family: var(--editorial);
+  font-size: 1.9rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -.02em;
+  color: var(--bone);
+  font-variant-numeric: tabular-nums;
+  margin-bottom: 6px;
+  transition: all .3s;
+}
+
+.kpi-value.gold  { color: var(--gold); }
+.kpi-value.green { color: var(--gold); }
+.kpi-value.data  { color: var(--chrome); }
+
+.kpi-source {
+  font-family: var(--mono);
+  font-size: .58rem;
+  font-weight: 400;
+  letter-spacing: .12em;
+  color: rgba(244,239,230,0.2);
+  opacity:0; transition:opacity .2s;
+}
+
+.kpi-card:hover .kpi-source { opacity:1; }
+
+/* ══ SECTIONS communes ══ */
+.section-label {
+  font-family: var(--mono);
+  font-size: 0.58rem;
+  font-weight: 400;
+  letter-spacing: .4em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  display:block; margin-bottom:12px;
+}
+
+.section-title {
+  font-family: var(--editorial);
+  font-weight: 700;
+  font-size: clamp(1.4rem, 3vw, 2.2rem);
+  color: var(--bone);
+  letter-spacing: -.015em;
+  line-height: 1.2;
+}
+
+.section-title em { font-style:italic; color:var(--gold); }
+
+/* ══ PARADOX DISPLAY §5.2 ══ */
+.paradox-section {
+  padding: 96px 48px;
+  position:relative; overflow:hidden;
+}
+
+.paradox-section::before {
+  content:''; position:absolute; inset:0;
+  background: radial-gradient(ellipse 80% 60% at 50% 50%,
+    rgba(240,180,41,.03) 0%, transparent 70%);
+  pointer-events:none;
+}
+
+.section-header { text-align:center; margin-bottom:64px; }
+
+.paradox-display {
+  display:grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items:center;
+  max-width:960px; margin:0 auto var(--sp-lg);
+  border-top:1px solid rgba(244,239,230,0.07);
+  border-bottom:1px solid rgba(244,239,230,0.07);
+  padding: 40px 0;
+}
+
+.paradox-side { text-align:center; padding:0 32px; }
+.paradox-side:first-child { border-right:1px solid rgba(244,239,230,0.07); }
+.paradox-side:last-child  { border-left: 1px solid rgba(244,239,230,0.07); }
+
+.paradox-meta {
+  font-family: var(--mono);
+  font-size: 0.58rem;
+  font-weight: 400;
+  letter-spacing: .25em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.paradox-meta.visible-label   { color: var(--red); opacity:.8; }
+.paradox-meta.invisible-label { color: var(--gold); }
+
+.paradox-number {
+  font-family: var(--editorial);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -.04em;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.paradox-number.visible-num {
+  font-size: clamp(3.5rem,7vw,5.5rem);
+  color: var(--red); opacity:.85;
+}
+
+.paradox-number.invisible-num {
+  font-size: clamp(5rem,10vw,8rem);
+  color: var(--gold);
+  text-shadow: 0 0 60px rgba(240,180,41,.2);
+  opacity:0; transform:scale(.88);
+  transition:opacity 1s var(--ease-out), transform 1s var(--ease-out);
+}
+
+.paradox-number.invisible-num.revealed { opacity:1; transform:scale(1); }
+
+.paradox-unit {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  font-weight: 400;
+  letter-spacing: .12em;
+  color: rgba(244,239,230,0.25);
+  line-height:1.5;
+}
+
+.paradox-multiplier { padding:0 20px; text-align:center; }
+
+.mult-symbol {
+  font-family: var(--editorial);
+  font-size: clamp(2.5rem,5vw,4rem);
+  font-weight:700;
+  color: var(--gold);
+  line-height:1; display:block;
+}
+
+.mult-label {
+  font-family: var(--mono);
+  font-size:.58rem; font-weight:400;
+  letter-spacing:.2em; text-transform:uppercase;
+  color: rgba(244,239,230,0.2);
+  display:block; margin-top:6px;
+}
+
+.paradox-quote {
+  max-width:680px; margin:0 auto;
+  text-align:center; padding:32px 0;
+  position:relative;
+}
+
+.paradox-quote::before,.paradox-quote::after {
+  content:''; position:absolute;
+  left:10%; right:10%; height:1px;
+  background: linear-gradient(90deg,transparent,var(--gold-dark),transparent);
+}
+
+.paradox-quote::before{top:0;} .paradox-quote::after{bottom:0;}
+
+.paradox-quote p {
+  font-family: var(--editorial);
+  font-style:italic; font-weight:700;
+  font-size: clamp(1.1rem,2.5vw,1.45rem);
+  line-height:1.55; color:var(--bone); text-align:center; margin:0;
+}
+
+.paradox-quote p strong { font-style:normal; color:var(--gold); }
+
+/* ══ CORRIDORS §5.3 ══ */
+.corridors-section {
+  padding: 96px 48px;
+  background: rgba(244,239,230,0.015);
+  border-top:1px solid rgba(244,239,230,0.06);
+  border-bottom:1px solid rgba(244,239,230,0.06);
+}
+
+.corridors-grid {
+  display:grid; grid-template-columns:repeat(3,1fr);
+  gap:12px; margin-top:40px;
+}
+
+.corridor-card {
+  background: rgba(244,239,230,0.03);
+  border: 1px solid rgba(244,239,232,0.07);
+  padding: 20px;
+  cursor:pointer;
+  transition:all .3s var(--ease-out);
+  position:relative; overflow:hidden;
+}
+
+.corridor-card::before {
+  content:''; position:absolute;
+  top:0; left:0; right:0; height:2px;
+  background: linear-gradient(90deg, var(--red), var(--gold));
+  transform:scaleX(0); transform-origin:left;
+  transition:transform .3s var(--ease-out);
+}
+
+.corridor-card:hover {
+  border-color: var(--gold-20);
+  background: rgba(240,180,41,0.04);
+  transform: translateY(-2px);
+}
+
+.corridor-card:hover::before { transform:scaleX(1); }
+
+.corridor-route {
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  color: var(--bone);
+  margin-bottom: 6px;
+  display:flex; align-items:center; gap:6px;
+}
+
+.corridor-arrow { color: var(--gold-dark); }
+
+.corridor-name {
+  font-family: var(--body);
+  font-size: 0.8rem;
+  color: var(--bone-dim);
+  margin-bottom: 14px;
+}
+
+.corridor-stats {
+  display:grid; grid-template-columns:1fr 1fr;
+  gap:6px; margin-top:14px; padding-top:14px;
+  border-top:1px solid rgba(244,239,230,0.06);
+}
+
+.corridor-stat-label {
+  font-family: var(--mono);
+  font-size:.55rem; font-weight:400;
+  letter-spacing:.2em; text-transform:uppercase;
+  color:rgba(244,239,230,0.2); margin-bottom:3px;
+}
+
+.corridor-stat-value {
+  font-family: var(--mono);
+  font-size:0.65rem; font-weight:700;
+  font-variant-numeric:tabular-nums;
+}
+
+.corridor-stat-value.neg { color:var(--red); }
+.corridor-stat-value.pos { color:var(--gold); }
+
+.corridor-paradox {
+  margin-top:12px;
+  display:flex; align-items:center; justify-content:space-between;
+}
+
+.corridor-paradox-label {
+  font-family:var(--mono); font-size:.58rem;
+  font-weight:400; letter-spacing:.18em;
+  text-transform:uppercase; color:rgba(244,239,230,0.2);
+}
+
+.corridor-paradox-ratio {
+  font-family:var(--editorial);
+  font-size:1.3rem; font-weight:700;
+  color:var(--gold); letter-spacing:-.02em;
+}
+
+/* ══ MANIFESTE SECTION ══ */
+.manifeste-section {
+  padding: 96px 48px;
+  display:grid; grid-template-columns:1fr 1fr;
+  gap:64px; align-items:center;
+  max-width:1280px; margin:0 auto;
+}
+
+.manifeste-editorial h2 {
+  font-family: var(--editorial);
+  font-size: clamp(1.5rem,3vw,2rem);
+  font-weight: 700;
+  color: var(--bone);
+  line-height: 1.2;
+  letter-spacing: -.015em;
+  margin-bottom:20px;
+}
+
+.manifeste-editorial h2 em { font-style:italic; color:var(--gold); }
+
+.manifeste-editorial p {
+  font-size:.95rem; color:var(--bone-dim);
+  line-height:1.85; margin-bottom:20px;
+}
+
+.manifeste-editorial p strong { color:var(--bone); font-weight:600; }
+
+.manifeste-data { display:flex; flex-direction:column; gap:20px; }
+
+/* Declic box */
+.declic-box {
+  background: rgba(244,239,230,0.02);
+  border: 1px solid rgba(244,239,230,0.08);
+  border-left: 3px solid rgba(244,239,230,0.25);
+  padding: 24px 28px;
+  position:relative;
+}
+
+.declic-box::before {
+  content:'Le déclic';
+  position:absolute; top:-10px; left:20px;
+  background:var(--ink); padding:0 8px;
+  font-family:var(--mono); font-size:.55rem;
+  font-weight:400; letter-spacing:.3em;
+  text-transform:uppercase; color:rgba(244,239,230,0.25);
+}
+
+.declic-box p {
+  font-family: var(--editorial);
+  font-style:italic; font-weight:700;
+  font-size:.88rem; color:rgba(244,239,230,0.5);
+  line-height:1.8; margin-bottom:12px;
+}
+
+.declic-box p:last-child { margin-bottom:0; }
+.declic-box p strong { font-style:normal; color:var(--bone-dim); }
+
+/* Founder card */
+.founder-card {
+  background: rgba(244,239,230,0.03);
+  border: 1px solid rgba(244,239,230,0.07);
+  padding: 20px;
+  display:flex; gap:16px; align-items:flex-start;
+}
+
+.founder-avatar {
+  width:48px; height:48px; border-radius:0;
+  background: linear-gradient(135deg, var(--blue), var(--red));
+  border: 2px solid var(--gold-20);
+  display:flex; align-items:center; justify-content:center;
+  font-family: var(--display);
+  font-size:1.5rem; color:var(--gold);
+  flex-shrink:0;
+}
+
+.founder-name {
+  font-family: var(--editorial);
+  font-size:1rem; font-weight:700;
+  color:var(--bone); margin-bottom:4px;
+}
+
+.founder-role {
+  font-family: var(--mono);
+  font-size:.58rem; font-weight:400;
+  letter-spacing:.2em; text-transform:uppercase;
+  color:var(--gold-dark); margin-bottom:10px;
+}
+
+.founder-tags { display:flex; flex-wrap:wrap; gap:5px; }
+
+.tag {
+  font-family: var(--mono);
+  font-size:.55rem; font-weight:400;
+  letter-spacing:.12em; text-transform:uppercase;
+  color:rgba(244,239,230,0.25);
+  border:1px solid rgba(244,239,230,0.08);
+  padding:2px 7px;
+}
+
+/* ══ API SECTION ══ */
+.api-section {
+  padding: 96px 48px;
+  background: rgba(244,239,230,0.015);
+  border-top:1px solid rgba(244,239,230,0.06);
+}
+
+.api-inner {
+  max-width:1280px; margin:0 auto;
+  display:grid; grid-template-columns:1fr 1fr;
+  gap:64px; align-items:start;
+}
+
+.api-code {
+  background: var(--ink);
+  border: 1px solid var(--gold-20);
+  padding: 24px;
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  font-weight: 400;
+  color: var(--chrome);
+  line-height: 1.9;
+  overflow-x: auto;
+}
+
+.api-code .comment { color:rgba(244,239,230,0.2); }
+.api-code .key     { color:var(--gold); }
+.api-code .val     { color:var(--gold-dark); }
+.api-code .str     { color:var(--bone-dim); }
+.api-code .url     { color:var(--chrome); text-decoration:underline; opacity:.8; }
+
+.api-endpoints { margin-top:20px; display:flex; flex-direction:column; gap:6px; }
+
+.endpoint {
+  display:flex; align-items:center; gap:14px;
+  padding:8px 12px;
+  background: rgba(244,239,230,0.03);
+  border: 1px solid rgba(244,239,230,0.07);
+  font-family: var(--mono);
+  font-size: 0.62rem;
+}
+
+.endpoint-method { font-weight:700; color:var(--gold); min-width:32px; }
+.endpoint-path   { color:var(--chrome); flex:1; }
+.endpoint-desc   { color:rgba(244,239,230,0.2); font-size:.55rem; letter-spacing:.08em; }
+
+/* ══ FOOTER ══ */
+footer {
+  padding: 40px 48px 32px;
+  border-top: 1px solid rgba(244,239,230,0.07);
+  display:grid; grid-template-columns:1fr auto 1fr;
+  align-items:center; gap:32px;
+}
+
+.footer-brand {
+  font-family: var(--editorial);
+  font-size:1rem; font-weight:700; font-style:italic;
+  color:var(--bone);
+}
+
+.footer-mission {
+  font-family: var(--body);
+  font-style:italic; font-size:.82rem;
+  color:var(--gold); margin-top:2px;
+}
+
+.footer-center {
+  text-align:center;
+  font-family: var(--mono);
+  font-size:.58rem; font-weight:400;
+  letter-spacing:.25em; text-transform:uppercase;
+  color:rgba(244,239,230,0.12); line-height:2.2;
+}
+
+.footer-right {
+  text-align:right;
+  font-family: var(--mono);
+  font-size:.58rem; font-weight:400;
+  letter-spacing:.12em;
+  color:rgba(244,239,230,0.2); line-height:2.2;
+}
+
+/* ══ ANIMATIONS ══ */
+.reveal { opacity:0; transform:translateY(18px); transition:opacity .6s ease-out,transform .6s ease-out; }
+.reveal.visible { opacity:1; transform:translateY(0); }
+.reveal-1{transition-delay:.1s;} .reveal-2{transition-delay:.22s;}
+.reveal-3{transition-delay:.34s;} .reveal-4{transition-delay:.46s;}
+.reveal-5{transition-delay:.58s;}
+
+/* Source tooltip §5.4 */
+[data-source]{position:relative;}
+[data-source]:hover::after{
+  content:attr(data-source);
+  position:absolute; bottom:calc(100% + 6px); left:50%;
+  transform:translateX(-50%); white-space:nowrap;
+  font-family:var(--mono); font-size:.55rem; font-weight:400;
+  letter-spacing:.08em; color:var(--bone-dim);
+  background:rgba(8,8,6,0.95); border:1px solid var(--gold-20);
+  padding:4px 8px; pointer-events:none; z-index:10;
+}
+
+/* Responsive */
+@media(max-width:1024px){
+  .hero{grid-template-columns:1fr; min-height:auto; padding-top:110px;}
+  .hero-data{display:none;}
+  .corridors-grid{grid-template-columns:1fr 1fr;}
+  .manifeste-section,.api-inner{grid-template-columns:1fr;}
+  .paradox-display{grid-template-columns:1fr; gap:32px;}
+  .paradox-side{border:none!important;}
+  footer{grid-template-columns:1fr; text-align:center;}
+  .footer-right{text-align:center;}
+}
+
+@media(max-width:680px){
+  nav{padding:12px 20px;} .nav-links{display:none;}
+  .hero,.paradox-section,.corridors-section,.manifeste-section,.api-section{padding-left:20px;padding-right:20px;}
+  .corridors-grid,.kpi-grid{grid-template-columns:1fr;}
+}
+
+::-webkit-scrollbar{width:3px;}
+::-webkit-scrollbar-track{background:var(--ink);}
+::-webkit-scrollbar-thumb{background:var(--gold-20);}
+</style>
+</head>
+<body>
+
+<!-- ══ NAVIGATION ══ -->
+<nav>
+  <a href="/fr/" class="nav-logo">
+    OIVE
+    <span class="logo-badge">sokohost.com</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#paradoxe" id="nav-paradoxe">Le Paradoxe</a></li>
+    <li><a href="#corridors" id="nav-corridors">Corridors</a></li>
+    <li><a href="#manifeste" id="nav-manifeste">Manifeste</a></li>
+    <li><a href="#api" id="nav-api">API</a></li>
+  </ul>
+  <div class="lang-toggle">
+    <button class="lang-btn active" data-lang="fr" onclick="setLang('fr')">FR</button>
+    <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
+  </div>
+</nav>
+
+<!-- ══ HERO ══ -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+
+  <div class="hero-editorial">
+    <div class="hero-eyebrow reveal reveal-1" id="hero-eyebrow">Bruxelles · Europe</div>
+
+    <h1 class="hero-title reveal reveal-2" id="hero-title">
+      Observatoire de<br>
+      l'Impact des <em>Vagues</em><br>
+      d'Immigration en <span class="accent">Europe</span>
+    </h1>
+
+    <p class="hero-mission reveal reveal-3" id="hero-mission">
+      <strong>« L'intelligence économique au service des migrants. »</strong><br>
+      Fondé sur 20 ans de collecte empirique. Open data. Temps réel.
+    </p>
+
+    <div class="hero-actions reveal reveal-4">
+      <a href="#paradoxe" class="btn-primary" id="btn-paradoxe">→ Le Paradoxe du Transfert</a>
+      <a href="manifeste-oive-v2.html" class="btn-secondary" id="btn-manifeste">Lire le Manifeste</a>
+    </div>
+  </div>
+
+  <!-- KPI Panel -->
+  <div class="hero-data reveal reveal-5">
+    <div class="live-badge">
+      <span class="live-dot"></span>
+      <span id="live-label">Données en direct</span>
+    </div>
+    <div class="kpi-grid">
+      <div class="kpi-card" style="--accent-color:var(--gold);">
+        <div class="kpi-label" id="kpi1-label">Corridors actifs</div>
+        <div class="kpi-value gold" id="kpi1">6</div>
+        <div class="kpi-source">Source · OIVE</div>
+      </div>
+      <div class="kpi-card" style="--accent-color:var(--gold);">
+        <div class="kpi-label" id="kpi2-label">Ratio moyen</div>
+        <div class="kpi-value gold" data-source="Banque Mondiale · Eurostat HBS · OIVE" id="kpi2">×6–8</div>
+        <div class="kpi-source">Paradoxe du Transfert</div>
+      </div>
+      <div class="kpi-card" style="--accent-color:var(--chrome);">
+        <div class="kpi-label" id="kpi3-label">Individus modélisés</div>
+        <!-- millésime dataset INE, fixe -->
+        <div class="kpi-value data" data-source="Cohorte INE 2024 · OIVE" id="kpi3">50 000</div>
+        <div class="kpi-source">INE España 2024</div>
+      </div>
+      <div class="kpi-card" style="--accent-color:var(--gold);">
+        <div class="kpi-label" id="kpi4-label">Open access</div>
+        <div class="kpi-value gold" id="kpi4">100%</div>
+        <div class="kpi-source">API · Données · Modèle</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ PARADOX ══ -->
+<section class="paradox-section" id="paradoxe">
+  <div class="section-header">
+    <span class="section-label" id="paradox-eyebrow">Découverte centrale OIVE</span>
+    <h2 class="section-title" id="paradox-title">
+      Le <em>Paradoxe du Transfert</em><br>— nommé par OIVE
+    </h2>
+  </div>
+
+  <div class="paradox-display">
+    <div class="paradox-side">
+      <div class="paradox-meta visible-label" id="pd-visible-label">Ce qu'on voit · tracé · cité</div>
+      <!-- millésime dataset BM, fixe -->
+      <span class="paradox-number visible-num" data-source="Banque Mondiale · Migration Data 2023">1 €</span>
+      <div class="paradox-unit" id="pd-visible-unit">Remittances<br>vers pays d'origine</div>
+    </div>
+    <div class="paradox-multiplier">
+      <span class="mult-symbol">×6–8</span>
+      <span class="mult-label" id="pd-mult-label">Le ratio<br>du paradoxe</span>
+    </div>
+    <div class="paradox-side">
+      <div class="paradox-meta invisible-label" id="pd-invisible-label">Ce qu'on ignore · invisible · jamais débattu</div>
+      <span class="paradox-number invisible-num" id="invisible-num"
+            data-source="Eurostat HBS · Structure des dépenses par nationalité · OIVE">6–8 €</span>
+      <div class="paradox-unit" id="pd-invisible-unit">Dépenses locales<br>dans le pays d'accueil</div>
+    </div>
+  </div>
+
+  <div class="paradox-quote">
+    <p id="paradox-quote-text">
+      Pour chaque euro qui <strong>part visible</strong>,
+      six à huit euros restent, circulent, font tourner des commerces,
+      paient des loyers, scolarisent des enfants
+      — <strong>en silence, dans l'économie locale.</strong>
+    </p>
+  </div>
+</section>
+
+<!-- ══ CORRIDORS ══ -->
+<section class="corridors-section" id="corridors">
+  <div style="max-width:1280px;margin:0 auto;">
+    <div class="section-header">
+      <span class="section-label" id="corridors-eyebrow">Systèmes vivants</span>
+      <h2 class="section-title" id="corridors-title">Corridors <em>UE ↔ Monde</em></h2>
+    </div>
+    <div class="corridors-grid" id="corridors-grid"></div>
+  </div>
+</section>
+
+<!-- ══ MANIFESTE ══ -->
+<section class="manifeste-section" id="manifeste">
+  <div class="manifeste-editorial">
+    <span class="section-label" id="manifeste-eyebrow">Acte de fondation</span>
+    <h2 id="manifeste-title">
+      Vingt ans de terrain.<br>
+      <em>Un fait que personne<br>ne formulait.</em>
+    </h2>
+    <p id="manifeste-p1">Ce manifeste n'est pas né dans une bibliothèque. Il est né dans des couloirs d'entreprise, des assemblées syndicales, des réunions de diaspora — partout où les trajectoires humaines de l'immigration africaine en Europe se donnent à voir dans leur vérité économique.</p>
+    <p id="manifeste-p2"><strong>20 ans de présence syndicale au plus haut niveau dans la plus grande entreprise de Bruxelles.</strong> 20 ans de plateformes de diasporas. 20 ans qui ont produit une conviction : il existe un fait économique que la littérature mainstream n'a jamais formulé avec la rigueur qu'il mérite.</p>
+    <a href="manifeste-oive-v2.html" class="btn-primary" style="margin-top:1.5rem;" id="btn-manifeste2">→ Lire le Manifeste complet</a>
+  </div>
+
+  <div class="manifeste-data">
+    <div class="declic-box">
+      <p id="declic-p1">Il y a quelques semaines, à l'aube, je me réveille. Plusieurs appels manqués. L'aîné de la famille vient d'être poignardé. J'effectue le transfert sans attendre. Puis vient l'attente.</p>
+      <p id="declic-p2">Je trie les tiroirs de mon bureau. Et là, je tombe sur <strong>la pile des reçus — tous les transferts depuis mon premier salaire en Europe.</strong></p>
+      <p id="declic-p3">Les reçus dans ma main, on les comptabilise. Le loyer payé pendant vingt ans, les courses, le métro, les cotisations — <strong>ça ne fait pas de bruit dans un tiroir.</strong></p>
+      <p id="declic-p4" style="font-style:normal;color:var(--gold);font-size:.8rem;letter-spacing:.05em;font-family:var(--mono);">C'est ce matin-là que le Paradoxe du Transfert a trouvé son nom.</p>
+    </div>
+
+    <div class="founder-card">
+      <div class="founder-avatar">N</div>
+      <div class="founder-info">
+        <div class="founder-name">Njeng Pierre-Yves</div>
+        <div class="founder-role" id="founder-role">Fondateur · Bruxelles</div>
+        <div class="founder-tags">
+          <span class="tag" id="tag1">20 ans terrain</span>
+          <span class="tag" id="tag2">Syndicaliste</span>
+          <span class="tag" id="tag3">Diaspora</span>
+          <span class="tag" id="tag4">Intelligence économique</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ API ══ -->
+<section class="api-section" id="api">
+  <div class="api-inner">
+    <div class="api-editorial">
+      <span class="section-label" id="api-eyebrow">Open Data · Temps réel</span>
+      <h2 class="section-title" style="margin-bottom:1.5rem;" id="api-title">
+        Une seule source.<br><em>Trois interfaces.</em>
+      </h2>
+      <p style="color:var(--bone-dim);margin-bottom:2rem;line-height:1.85;font-size:.9rem;" id="api-desc">
+        Toute donnée collectée par OIVE est immédiatement publique. API ouverte, sans clé, sans inscription. Le modèle économique est open source (MIT). Chaque chiffre indique sa source, sa date de collecte et son intervalle de confiance.
+      </p>
+      <div class="api-endpoints">
+        <div class="endpoint"><span class="endpoint-method">GET</span><span class="endpoint-path">/corridors</span><span class="endpoint-desc" id="ep1">Liste des corridors actifs</span></div>
+        <div class="endpoint"><span class="endpoint-method">GET</span><span class="endpoint-path">/corridors/{id}/live</span><span class="endpoint-desc" id="ep2">Snapshot temps réel</span></div>
+        <div class="endpoint"><span class="endpoint-method">GET</span><span class="endpoint-path">/corridors/{id}/virtuous</span><span class="endpoint-desc" id="ep3">Indice + boucles</span></div>
+        <div class="endpoint"><span class="endpoint-method">POST</span><span class="endpoint-path">/simulate</span><span class="endpoint-desc" id="ep4">Contrefactuel custom</span></div>
+        <div class="endpoint"><span class="endpoint-method">GET</span><span class="endpoint-path">/alerts</span><span class="endpoint-desc" id="ep5">Veille législative EUR-Lex</span></div>
+      </div>
+    </div>
+
+    <div class="api-code">
+<span class="comment">// GET api.sokohost.com/corridors/MAR-ES/live</span>
+
+{
+  <span class="key">"corridor"</span>: <span class="str">"MAR-ES"</span>,
+  <span class="key">"spending_paradox_ratio"</span>: <span class="val">6.4</span>,
+  <span class="key">"remittances_bn_eur"</span>: <span class="val">3.1</span>,
+  <span class="key">"local_spending_bn_eur"</span>: <span class="val">19.8</span>,
+  <span class="key">"virtuous_index"</span>: <span class="val">72</span>,
+  <span class="key">"source"</span>: <span class="str">"INE · Banque Mondiale · Eurostat HBS"</span>,
+  <span class="key">"confidence_interval"</span>: <span class="str">"95%"</span>,
+  <span class="key">"license"</span>: <span class="url">"CC BY 4.0"</span>
+}
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div>
+    <div class="footer-brand">OIVE</div>
+    <div class="footer-mission" id="footer-mission">L'intelligence économique au service des migrants.</div>
+  </div>
+  <div class="footer-center">
+    SOKOHOST-OIVE'<br>
+    sokohost.com<br>
+    Njeng Pierre-Yves<br>
+    Bruxelles · <span class="current-year"></span><br>
+    CC BY 4.0
+  </div>
+  <div class="footer-right" id="footer-right">
+    Open Data · Open Source<br>
+    API publique · MIT License<br>
+    Paradoxe du Transfert<br>
+    The Spending Paradox · OIVE
+  </div>
+</footer>
+
+<script>
+// ── DONNÉES CORRIDORS ─────────────────────────────────────────
+const CORRIDORS = [
+  { id:'MAR-ES', from:'Maroc', to:'Espagne', flag_from:'🇲🇦', flag_to:'🇪🇸',
+    remit:'~3.1 Md€/an', spending:'~19.8 Md€/an', ratio:'×6.4', index:72 },
+  { id:'SEN-FR', from:'Sénégal', to:'France · Italie', flag_from:'🇸🇳', flag_to:'🇫🇷',
+    remit:'~1.4 Md€/an', spending:'~9.2 Md€/an', ratio:'×6.6', index:65 },
+  { id:'UKR-DE', from:'Ukraine', to:'Pologne · Allemagne', flag_from:'🇺🇦', flag_to:'🇩🇪',
+    remit:'~3.5 Md€/an', spending:'~24.5 Md€/an', ratio:'×7.0', index:68 },
+  { id:'IND-NL', from:'Inde', to:'Allemagne · Pays-Bas', flag_from:'🇮🇳', flag_to:'🇳🇱',
+    remit:'~2.1 Md€/an', spending:'~15.7 Md€/an', ratio:'×7.5', index:74 },
+  { id:'BGD-IT', from:'Bangladesh', to:'Italie · Royaume-Uni', flag_from:'🇧🇩', flag_to:'🇮🇹',
+    remit:'~1.8 Md€/an', spending:'~12.6 Md€/an', ratio:'×7.0', index:62 },
+  { id:'TUN-FR', from:'Tunisie', to:'France · Italie', flag_from:'🇹🇳', flag_to:'🇫🇷',
+    remit:'~1.1 Md€/an', spending:'~7.7 Md€/an', ratio:'×7.0', index:60 },
+];
+
+// ── CONTENU BILINGUE ─────────────────────────────────────────
+const CONTENT = {
+  fr: {
+    'nav-paradoxe':'Le Paradoxe','nav-corridors':'Corridors',
+    'nav-manifeste':'Manifeste','nav-api':'API',
+    'live-label':'Données en direct',
+    'hero-eyebrow':'Bruxelles · Europe',
+    'hero-title':'Observatoire de<br>l\'Impact des <em>Vagues</em><br>d\'Immigration en <span class="accent">Europe</span>',
+    'hero-mission':'<strong>« L\'intelligence économique au service des migrants. »</strong><br>Fondé sur 20 ans de collecte empirique. Open data. Temps réel.',
+    'kpi1-label':'Corridors actifs','kpi2-label':'Ratio moyen',
+    'kpi3-label':'Individus modélisés','kpi4-label':'Open access',
+    'paradox-eyebrow':'Découverte centrale OIVE',
+    'paradox-title':'Le <em>Paradoxe du Transfert</em><br>— nommé par OIVE',
+    'pd-visible-label':'Ce qu\'on voit · tracé · cité',
+    'pd-invisible-label':'Ce qu\'on ignore · invisible · jamais débattu',
+    'pd-visible-unit':'Remittances<br>vers pays d\'origine',
+    'pd-invisible-unit':'Dépenses locales<br>dans le pays d\'accueil',
+    'pd-mult-label':'Le ratio<br>du paradoxe',
+    'paradox-quote-text':'Pour chaque euro qui <strong>part visible</strong>, six à huit euros restent, circulent, font tourner des commerces, paient des loyers, scolarisent des enfants — <strong>en silence, dans l\'économie locale.</strong>',
+    'corridors-eyebrow':'Systèmes vivants',
+    'corridors-title':'Corridors <em>UE ↔ Monde</em>',
+    'manifeste-eyebrow':'Acte de fondation',
+    'manifeste-title':'Vingt ans de terrain.<br><em>Un fait que personne<br>ne formulait.</em>',
+    'manifeste-p1':'Ce manifeste n\'est pas né dans une bibliothèque. Il est né dans des couloirs d\'entreprise, des assemblées syndicales, des réunions de diaspora — partout où les trajectoires humaines de l\'immigration africaine en Europe se donnent à voir dans leur vérité économique.',
+    'manifeste-p2':'<strong>20 ans de présence syndicale au plus haut niveau dans la plus grande entreprise de Bruxelles.</strong> 20 ans de plateformes de diasporas. 20 ans qui ont produit une conviction : il existe un fait économique que la littérature mainstream n\'a jamais formulé avec la rigueur qu\'il mérite.',
+    'btn-paradoxe':'→ Le Paradoxe du Transfert',
+    'btn-manifeste':'Lire le Manifeste',
+    'btn-manifeste2':'→ Lire le Manifeste complet',
+    'declic-p1':'Il y a quelques semaines, à l\'aube, je me réveille. Plusieurs appels manqués. L\'aîné de la famille vient d\'être poignardé. J\'effectue le transfert sans attendre. Puis vient l\'attente.',
+    'declic-p2':'Je trie les tiroirs de mon bureau. Et là, je tombe sur <strong>la pile des reçus — tous les transferts depuis mon premier salaire en Europe.</strong>',
+    'declic-p3':'Les reçus dans ma main, on les comptabilise. Le loyer payé pendant vingt ans, les courses, le métro, les cotisations — <strong>ça ne fait pas de bruit dans un tiroir.</strong>',
+    'declic-p4':'C\'est ce matin-là que le Paradoxe du Transfert a trouvé son nom.',
+    'founder-role':'Fondateur · Bruxelles',
+    'tag1':'20 ans terrain','tag2':'Syndicaliste','tag3':'Diaspora','tag4':'Intelligence économique',
+    'api-eyebrow':'Open Data · Temps réel',
+    'api-title':'Une seule source.<br><em>Trois interfaces.</em>',
+    'api-desc':'Toute donnée collectée par OIVE est immédiatement publique. API ouverte, sans clé, sans inscription. Le modèle économique est open source (MIT). Chaque chiffre indique sa source, sa date de collecte et son intervalle de confiance.',
+    'ep1':'Liste des corridors actifs','ep2':'Snapshot temps réel',
+    'ep3':'Indice + boucles','ep4':'Contrefactuel custom','ep5':'Veille législative EUR-Lex',
+    'footer-mission':'L\'intelligence économique au service des migrants.',
+    'corr-remit':'Remittances','corr-spending':'Dépenses locales',
+    'corr-ratio':'Ratio paradoxe','corr-index':'Indice vertueux',
+  },
+  en: {
+    'nav-paradoxe':'The Paradox','nav-corridors':'Corridors',
+    'nav-manifeste':'Manifesto','nav-api':'API',
+    'live-label':'Live data',
+    'hero-eyebrow':'Brussels · Europe',
+    'hero-title':'Observatory of the<br>Economic Impact of <em>Migration</em><br>Waves in <span class="accent">Europe</span>',
+    'hero-mission':'<strong>"Economic intelligence for migrants."</strong><br>Built on 20 years of empirical fieldwork. Open data. Real time.',
+    'kpi1-label':'Active corridors','kpi2-label':'Average ratio',
+    'kpi3-label':'Modelled individuals','kpi4-label':'Open access',
+    'paradox-eyebrow':'OIVE central discovery',
+    'paradox-title':'<em>The Spending Paradox</em><br>— coined by OIVE, Njeng Pierre-Yves',
+    'pd-visible-label':'What\'s seen · tracked · cited',
+    'pd-invisible-label':'What\'s ignored · invisible · never debated',
+    'pd-visible-unit':'Remittances<br>to country of origin',
+    'pd-invisible-unit':'Local spending<br>in the host country',
+    'pd-mult-label':'The paradox<br>ratio',
+    'paradox-quote-text':'For every euro that <strong>leaves visibly</strong>, six to eight euros remain, circulate, sustain local businesses, pay rents, educate children — <strong>silently, within the local economy.</strong>',
+    'corridors-eyebrow':'Living systems',
+    'corridors-title':'Corridors <em>EU ↔ World</em>',
+    'manifeste-eyebrow':'Founding act',
+    'manifeste-title':'Twenty years on the ground.<br><em>A fact no one<br>had put into words.</em>',
+    'manifeste-p1':'This manifesto was not born in a library. It was born in company corridors, union halls, diaspora meetings — wherever the human trajectories of African immigration in Europe reveal their true economic reality.',
+    'manifeste-p2':'<strong>20 years of top-level union representation in Brussels\' largest employer.</strong> 20 years building diaspora platforms. 20 years that produced one conviction: an obvious economic fact that mainstream literature has never articulated with the rigour it deserves.',
+    'btn-paradoxe':'→ The Spending Paradox',
+    'btn-manifeste':'Read the Manifesto',
+    'btn-manifeste2':'→ Read the full Manifesto',
+    'declic-p1':'A few weeks ago, at dawn, I wake up. Several missed calls. The eldest in the family has been stabbed. I make the transfer immediately. Then comes the waiting.',
+    'declic-p2':'I sort through my desk drawers. Then I found <strong>the pile of receipts — every transfer since my first pay cheque in Europe.</strong>',
+    'declic-p3':'Those receipts in my hand — those get counted. Twenty years of rent, groceries, the metro, social contributions — <strong>none of that makes noise in a drawer.</strong>',
+    'declic-p4':'That morning, The Spending Paradox found its name.',
+    'founder-role':'Founder · Brussels',
+    'tag1':'20 yrs field','tag2':'Trade unionist','tag3':'Diaspora','tag4':'Economic intelligence',
+    'api-eyebrow':'Open Data · Real time',
+    'api-title':'One source.<br><em>Three interfaces.</em>',
+    'api-desc':'Every piece of data collected by OIVE is immediately public. Open API, no key, no registration required. The economic model is open source (MIT). Every figure displays its source, collection date and confidence interval.',
+    'ep1':'List active corridors','ep2':'Real-time snapshot',
+    'ep3':'Index + loops','ep4':'Custom counterfactual','ep5':'EUR-Lex legislative alerts',
+    'footer-mission':'Economic intelligence for migrants.',
+    'corr-remit':'Remittances','corr-spending':'Local spending',
+    'corr-ratio':'Paradox ratio','corr-index':'Virtuous index',
+  }
+};
+
+// ── LANGUE ────────────────────────────────────────────────────
+let currentLang = localStorage.getItem('oive-lang') || 'fr';
+
+function setLang(lang) {
+  currentLang = lang;
+  localStorage.setItem('oive-lang', lang);
+  document.querySelectorAll('.lang-btn').forEach(b =>
+    b.classList.toggle('active', b.dataset.lang === lang));
+  document.documentElement.lang = lang;
+  document.body.style.opacity = '.6';
+  document.body.style.transition = 'opacity .2s';
+  setTimeout(() => {
+    applyContent(lang);
+    renderCorridors(lang);
+    document.body.style.opacity = '1';
+  }, 200);
+}
+
+function applyContent(lang) {
+  const c = CONTENT[lang];
+  Object.entries(c).forEach(([id, val]) => {
+    const el = document.getElementById(id);
+    if (el) el.innerHTML = val;
+  });
+}
+
+// ── CORRIDORS ────────────────────────────────────────────────
+function renderCorridors(lang) {
+  const c = CONTENT[lang];
+  const grid = document.getElementById('corridors-grid');
+  grid.innerHTML = CORRIDORS.map(cor => `
+    <div class="corridor-card reveal">
+      <div class="corridor-route">
+        ${cor.flag_from}
+        <span class="corridor-arrow">→</span>
+        ${cor.flag_to}
+        <span style="margin-left:4px;font-size:.6rem;color:rgba(244,239,230,0.2);letter-spacing:.1em;">${cor.id}</span>
+      </div>
+      <div class="corridor-name">${cor.from} → ${cor.to}</div>
+      <div class="corridor-stats">
+        <div>
+          <div class="corridor-stat-label">${c['corr-remit']}</div>
+          <div class="corridor-stat-value neg">${cor.remit}</div>
+        </div>
+        <div>
+          <div class="corridor-stat-label">${c['corr-spending']}</div>
+          <div class="corridor-stat-value pos">${cor.spending}</div>
+        </div>
+      </div>
+      <div class="corridor-paradox">
+        <span class="corridor-paradox-label">${c['corr-ratio']}</span>
+        <span class="corridor-paradox-ratio">${cor.ratio}</span>
+      </div>
+    </div>
+  `).join('');
+  grid.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+}
+
+// ── OBSERVERS ────────────────────────────────────────────────
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      if (entry.target.classList.contains('kpi-card'))
+        setTimeout(() => entry.target.classList.add('revealed'), 200);
+    }
+  });
+}, { threshold: 0.15 });
+
+const paradoxObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting)
+      setTimeout(() =>
+        document.getElementById('invisible-num').classList.add('revealed'), 400);
+  });
+}, { threshold: 0.6 });
+
+// ── DATE DYNAMIQUE ────────────────────────────────────────────
+(function() {
+  const yr = new Date().getFullYear();
+  document.querySelectorAll('.current-year').forEach(el => el.textContent = yr);
+})();
+
+// ── INIT ─────────────────────────────────────────────────────
+document.addEventListener('DOMContentLoaded', () => {
+  applyContent(currentLang);
+  renderCorridors(currentLang);
+  document.documentElement.lang = currentLang;
+  document.querySelectorAll('.lang-btn').forEach(b =>
+    b.classList.toggle('active', b.dataset.lang === currentLang));
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  document.querySelectorAll('.kpi-card').forEach(el => observer.observe(el));
+  const ps = document.getElementById('paradoxe');
+  if (ps) paradoxObserver.observe(ps);
+  setTimeout(() =>
+    document.querySelectorAll('.hero .reveal').forEach(el => el.classList.add('visible')), 100);
+});
+</script>
+</body>
+</html>

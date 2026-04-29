@@ -11,3 +11,7 @@ _output/
 .env
 .env.local
 .claude/
+
+# Fichiers locaux non trackés
+SKILL.md
+files.zip
