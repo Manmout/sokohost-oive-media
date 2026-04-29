@@ -1,0 +1,88 @@
+# SOKOHOST-OIVE' — Netlify config
+# SKH-OIV-DS-001 · Artclic Studios · sokohost.com
+
+[build]
+  publish = "."
+  command = ""
+
+# ════════════════════════════════════════════════════════════
+# ISSUE 1 — Racine et alias langue → homepage bilingue
+# ════════════════════════════════════════════════════════════
+
+[[redirects]]
+  from = "/"
+  to = "/sokohost-homepage.html"
+  status = 200
+
+[[redirects]]
+  from = "/fr"
+  to = "/sokohost-homepage.html"
+  status = 200
+
+[[redirects]]
+  from = "/fr/"
+  to = "/sokohost-homepage.html"
+  status = 200
+
+[[redirects]]
+  from = "/en"
+  to = "/sokohost-homepage.html"
+  status = 200
+
+[[redirects]]
+  from = "/en/"
+  to = "/sokohost-homepage.html"
+  status = 200
+
+# ════════════════════════════════════════════════════════════
+# ISSUE 2 — URLs canoniques fr/en pour articles + manifeste
+# Reorg physique différée commit 3 — ces redirects rendent
+# les URLs hreflang fonctionnelles dès maintenant.
+# ════════════════════════════════════════════════════════════
+
+[[redirects]]
+  from = "/fr/paradoxe-du-transfert"
+  to = "/paradoxe-du-transfert.html"
+  status = 200
+
+[[redirects]]
+  from = "/fr/manifeste"
+  to = "/manifeste-oive-v2.html"
+  status = 200
+
+[[redirects]]
+  from = "/en/spending-paradox"
+  to = "/spending-paradox.html"
+  status = 200
+
+# ════════════════════════════════════════════════════════════
+# ISSUE 3 (Y) — Fichiers internes : 404 strict
+# CLAUDE.md + claude-code-*.md = instructions internes
+# ════════════════════════════════════════════════════════════
+
+[[redirects]]
+  from = "/CLAUDE.md"
+  to = "/404"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/claude-code-*.md"
+  to = "/404"
+  status = 404
+  force = true
+
+# ════════════════════════════════════════════════════════════
+# ISSUE 3 (X) — COMMIT.txt : accessible mais non indexé
+# Archive publique inoffensive · noindex Google
+# ════════════════════════════════════════════════════════════
+
+[[headers]]
+  for = "/COMMIT.txt"
+  [headers.values]
+    X-Robots-Tag = "noindex"
+
+# ════════════════════════════════════════════════════════════
+# Note · design.md reste PUBLIC sans header
+# DS canonique OIVE — transparence open source assumée
+# ════════════════════════════════════════════════════════════
