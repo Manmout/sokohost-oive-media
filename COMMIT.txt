@@ -1,0 +1,48 @@
+feat(articles): Paradoxe du Transfert / Spending Paradox
+— version bilingue FR+EN complète
+
+FR — paradoxe-du-transfert.html
+- Sources open data : 5 groupes thématiques,
+  14 URLs curl 200 OK + 4 institutionnelles
+  vérifiées manuellement (OCDE, IOM, EUR-Lex)
+- IIFE date dynamique fr-FR
+- Footer sources : mention anti-bot explicite
+- <!-- 403 anti-bot --> sur 3 entrées OCDE/IOM
+
+EN — spending-paradox.html
+- Fusion ciblée sur fichier EN authored existant
+  (1574 lignes) — corps III–VIII conservé intact
+- h2 + TOC : "The pile of receipts" (#i ancre OK)
+- Byline : byline-author + byline-role + CSS posé
+- cite-block : "Brussels, 2025." ajouté
+- Passage (a) : "Then I found the pile." §1124
+- Passage (b) : "the figure that frames the entire
+  debate" inserted §1204
+- Passage (c) : option 3 — ouverture Section VI
+  "The mainstream narrative focuses on what leaves.
+  The Spending Paradox reframes the question
+  around what stays."
+- Sources : 19 entrées (miroir FR + MPI ajouté)
+  15/19 curl 200 OK · 4 anti-bot documentés
+- CSS sources tokens --oive-* natifs
+- IIFE date en-GB
+
+Nomenclature canonique vérifiée :
+  "The Spending Paradox" ✓ (jamais Transfer Paradox)
+  "Economic intelligence for migrants." ✓
+  "Brussels, 2025." ✓ dans citation EN
+  Njeng Pierre-Yves ✓ byline FR+EN
+
+OIVE · Njeng Pierre-Yves · sokohost.com
+ODL v1.0 · CC BY 4.0 · Open Data
+
+---
+
+fix(dates): purge années codées en dur
+
+- Remplacement dynamique new Date().getFullYear()
+  sur toutes les dates courantes catégorie A
+- Dates historiques fondatrices marquées
+  <!-- date historique fondatrice -->
+- Meta attributes marqués <!-- meta-year -->
+- Règle ajoutée à CLAUDE.md §dates
