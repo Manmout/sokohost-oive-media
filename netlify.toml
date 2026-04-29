@@ -67,7 +67,19 @@
   force = true
 
 [[redirects]]
-  from = "/claude-code-*.md"
+  from = "/claude-code-correction-article.md"
+  to = "/404"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/claude-code-sources-opendata.md"
+  to = "/404"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/claude-code-migration-skh.md"
   to = "/404"
   status = 404
   force = true
